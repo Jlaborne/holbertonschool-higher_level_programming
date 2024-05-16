@@ -3,4 +3,8 @@ import functools
 
 
 def uniq_add(my_list=[]):
-    return (functools.reduce(lambda a, b: a + b, set(my_list)))
+    unique_num = set(my_list)
+    total = 0
+    for num in unique_num:
+        total += num
+    return (total)
