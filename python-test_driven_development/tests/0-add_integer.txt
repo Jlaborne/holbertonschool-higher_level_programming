@@ -1,0 +1,11 @@
+===========================
+How to use 0-add_integer.py
+===========================
+
+Numbers
+=======
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
