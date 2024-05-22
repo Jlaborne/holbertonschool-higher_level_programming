@@ -19,9 +19,9 @@ def matrix_divided(matrix, div):
     Return:
         list of lists: A new matrix with all elements divided by div rounded to 2. 
     """
-    if (not isinstance(matrix, list)or matrix == [] or
+    if (not isinstance(matrix, list) or matrix == [] or
         not all(isinstance(row, list) for row in matrix)or 
-        not all((isinstance(ele, list) or isinstance(ele, float))
+        not all((isinstance(ele, int) or isinstance(ele, float))
                 for ele in [num for row in matrix for num in row])):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     
