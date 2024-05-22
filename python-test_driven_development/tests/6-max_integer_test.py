@@ -47,5 +47,5 @@ class TestMaxInteger(unittest.TestCase):
         string = "Brennan"
         self.assertEqual(max_integer(string), 'r')
 
-  if __name__ == '__main__':
+if __name__ == '__main__':
     unittest.main()
