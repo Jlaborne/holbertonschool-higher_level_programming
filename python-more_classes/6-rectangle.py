@@ -4,7 +4,7 @@
 
 class Rectangle:
     """Represent a Rectangle"""
-    number_of_instance = 0
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """
@@ -12,7 +12,7 @@ class Rectangle:
             width (int): the width of the new rectangle
             height (int): the height of the new rectangle
         """
-        Rectangle.number_of_instance += 1
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -69,5 +69,5 @@ class Rectangle:
         return (rep)
 
     def __del__(self):
-        Rectangle.number_of_instance -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
