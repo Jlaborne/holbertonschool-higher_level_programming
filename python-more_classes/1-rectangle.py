@@ -3,7 +3,14 @@
 
 
 class Rectangle:
+    """Represent a Rectangle"""
+
     def __init__(self, width=0, height=0):
+        """
+        Args: 
+            width (int): the width of the new rectangle
+            height (int): the height of the new rectangle
+        """
         self.width = width
         self.height = height
 
