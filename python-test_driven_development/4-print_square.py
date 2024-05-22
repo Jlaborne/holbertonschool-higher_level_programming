@@ -4,11 +4,11 @@
 
 def print_square(size):
     """
-        Args:
-            size (int): The eight/width of the square.
-        Raises:
-            TypeError: If size is not an integer
-            ValueError: If size is < 0
+    Args:
+        size (int): The eight/width of the square.
+    Raises:
+        TypeError: If size is not an integer
+        ValueError: If size is < 0
     """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
