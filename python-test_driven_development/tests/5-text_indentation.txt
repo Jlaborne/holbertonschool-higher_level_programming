@@ -13,3 +13,21 @@ hell:
 o
 
 >>> text_indentation("")
+
+
+
+>>> text_indentation("hell.o")
+hell.
+<BLANKLINE>
+o
+
+>>> text_indentation("hell?o")
+hell?
+<BLANKLINE>
+o
+
+>>> text_indentation(".")
+.
+<BLANKLINE>
+
+>>> text_indentation("    ")
