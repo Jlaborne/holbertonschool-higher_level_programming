@@ -3,7 +3,9 @@
 
 
 class MyList(list):
-
+    """
+    Args: list
+    """
 
     def print_sorted(self):
         print(sorted(self))
