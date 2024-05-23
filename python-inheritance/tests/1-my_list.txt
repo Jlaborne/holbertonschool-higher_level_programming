@@ -10,6 +10,11 @@
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
 
+Literal list:
+>>> my_list = MyList(["Laval", "Rennes", "Mayenne", "Angers", "Paris"])
+>>> my_list.print_sorted()
+['Angers', 'Laval', 'Mayenne', 'Paris', 'Rennes']
+
 Empty list :
 >>> empty = MyList()
 >>> empty.print_sorted()
