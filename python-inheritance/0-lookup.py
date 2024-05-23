@@ -8,6 +8,5 @@ def lookup(obj):
     Return: 
         li: the list that contain attributes/method
     """
-    li = []
-    dir(li)
+    li = dir(obj)
     return (li)
