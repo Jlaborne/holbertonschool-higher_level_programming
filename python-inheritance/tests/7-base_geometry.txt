@@ -1,0 +1,24 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> type(bg)
+<class '7-base_geometry.BaseGeometry'>
+
+>>> bg = BaseGeometry(None)
+Traceback (most recent call last):
+TypeError: object() takes no parameters
+
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg.integer_validator("invalid number", "number")
+Traceback (most recent call last):
+TypeError: invalid number must be an integer
+
+>>> bg.integer_validator("invalid int", -1)
+Traceback (most recent call last):
+ValueError: invalid int must be greater than 0
+
+>>> bg.integer_validator("invalid int", 0)
+Traceback (most recent call last):
+ValueError: invalid int must be greater than 0
