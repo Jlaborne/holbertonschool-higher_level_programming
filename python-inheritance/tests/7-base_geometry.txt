@@ -22,3 +22,11 @@ ValueError: invalid int must be greater than 0
 >>> bg.integer_validator("invalid int", 0)
 Traceback (most recent call last):
 ValueError: invalid int must be greater than 0
+
+>>> bg.integer_validator("invalid tuple", (1,))
+Traceback (most recent call last):
+TypeError: invalid tuple must be an integer
+
+>>> bg.integer_validator("and another", [3])
+Traceback (most recent call last):
+TypeError: and another must be an integer
