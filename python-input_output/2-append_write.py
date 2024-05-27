@@ -2,7 +2,7 @@
 """Function that append into a file"""
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """Append a content into a file
 
         Args:
