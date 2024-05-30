@@ -19,7 +19,7 @@ def serialize_to_xml(dictionary, filename):
 
     tree = ET.ElementTree(root)
 
-    tree.write(filename)
+    tree.write(filename, encoding="utf-8")
 
 def deserialize_from_xml(filename):
     """
