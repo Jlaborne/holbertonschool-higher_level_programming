@@ -31,11 +31,16 @@ def deserialize_from_xml(filename):
     Returns:
         dict: The deserialized dictionary.
     """
-    tree = ET.parse('filename')
-    root = tree.getroot()
+    try:
+        tree = ET.parse('filename')
+        root = tree.getroot()
 
-    deserialized_dict = {}
-    for child in root:
-        deserialized_dict[child.tag] = child.text
+        deserialized_dict = {}
+        for child in root:
+            deserialized_dict[child.tag] = child.text
 
-    return deserialized_dict
+        return deserialized_dict
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
