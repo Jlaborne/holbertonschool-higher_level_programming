@@ -32,7 +32,7 @@ def deserialize_from_xml(filename):
         dict: The deserialized dictionary.
     """
     try:
-        tree = ET.parse('filename')
+        tree = ET.parse(filename)
         root = tree.getroot()
 
         deserialized_dict = {}
