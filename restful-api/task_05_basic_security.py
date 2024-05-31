@@ -62,6 +62,10 @@ def expired_token_handler(callback):
     return jsonify({"error": "Expired JWT token"}), 401
 
 @jwt.revoked_token_loader
+def handle_revoked_token_error(err):
+    return jsonify({"error": "Token has been revoked"}), 401
+
+@jwt.revoked_token_loader
 def revoked_token_handler(callback):
     return jsonify({"error": "Revoked JWT token"}), 401
 
