@@ -1,45 +1,42 @@
-import http.server
-import socketserver
+#!/usr/bin/python3
+"""Develop a simple API using Python with the `http.server` module"""
+
+
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
-PORT = 8000
-
-# Define the request handler by subclassing BaseHTTPRequestHandler
-class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
+class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+    """get request"""
     def do_GET(self):
         if self.path == '/':
-            # Handle the root endpoint
             self.send_response(200)
-            self.send_header("Content-type", "text/plain")
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
         elif self.path == '/data':
-            # Handle the /data endpoint
             self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_header('Content-type', 'application/json')
             self.end_headers()
             data = {"name": "John", "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(data).encode())
         elif self.path == '/status':
-            # Handle the /status endpoint
             self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(b"OK")
-        elif self.path == '/info':
-            # Handle the /info endpoint
-            self.send_response(200)
-            self.send_header("Content-type", "application/json")
-            self.end_headers()
-            info = {"version": "1.0", "description": "A simple API built with http.server"}
-            self.wfile.write(json.dumps(info).encode())
         else:
-            # Handle undefined endpoints
             self.send_response(404)
-            self.send_header("Content-type", "text/plain")
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b"Endpoint not found")
+            self.wfile.write(b"404 Not Found")
 
-with socketserver.TCPServer(("", PORT), SimpleHTTPRequestHandler) as httpd:
-    print(f"Serving at port {PORT}")
+def run(server_class=HTTPServer,
+        handler_class=SimpleHTTPRequestHandler, port=8000):
+    """run the sever"""
+    server_address = ('', port)
+    httpd = server_class(server_address, handler_class)
+    print('Starting server on port', port)
     httpd.serve_forever()
+
+if __name__ == '__main__':
+    run()
