@@ -24,7 +24,7 @@ class TestModels(unittest.TestCase):
     def test_place_creation(self):
         country = Country("Test Country")
         city = City("Test City", country)
-        place = Place("Test Place", city)
+        place = Place("Test Place", "Description of Test Place", city)
         self.assertEqual(place.name, "Test Place")
         self.assertEqual(place.city.name, "Test City")
 
